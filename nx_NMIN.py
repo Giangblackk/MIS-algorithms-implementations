@@ -37,7 +37,7 @@ def tadpole_graph(m,n,create_using=None):
 # predefined graph
 K23 = nx.complete_bipartite_graph(2,3)
 P5 = nx.path_graph(5)
-banner = tadpole_graph(3,1)
+banner = tadpole_graph(4,1)
 def able_to_induce_K23_P5_Banner(G):
     GM1 = isomorphism.GraphMatcher(G,K23)
     GM2 = isomorphism.GraphMatcher(G,P5)
@@ -66,7 +66,8 @@ def is_alpha_redundance(G, node):
             neigbors2 = neigbors + list(set(neigbors2) - set(neigbors)  - set([node]))
             for u1, u2 in combinations(neigbors2,2):
                 if not(G.has_edge(u1,node) or G.has_edge(u2,node) or G.has_edge(u1,u2)) and able_to_induce_K23_P5_Banner(G.subgraph([node,u1,u2,v1,v2])):
-                     return False
+                    print('v1,v2,u,u1,u2',v1,v2,node,u1,u2)
+                    return False
             return True
     return False
 
@@ -82,6 +83,7 @@ def MIN(G):
         # if index is alpha-redundance, remove index from H and next
         # else do like normal
         if is_alpha_redundance(H,index):
+            print('index:',index)
             H.remove_node(index)
         else:
             I.append(index)

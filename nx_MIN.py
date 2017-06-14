@@ -36,9 +36,9 @@ def MIN(G):
 #G = nx.Graph(nx.read_pajek(r'/media/giangblackk/6DFEC767661D92C8/MyWorkspace/Graph/projects/MIS/Data/TransportationNetworks_test/Berlin-Center/berlin-center_net.net'))
 #G = nx.Graph(nx.read_pajek(r'/media/giangblackk/6DFEC767661D92C8/MyWorkspace/Graph/projects/MIS/Data/TransportationNetworks_test/Birmingham-England/Birmingham_Net.net'))
 #G = nx.Graph(nx.read_pajek(r'/media/giangblackk/6DFEC767661D92C8/MyWorkspace/Graph/projects/MIS/Data/TransportationNetworks_test/Philadelphia/Philadelphia_net.net'))
-G = nx.Graph(nx.read_pajek(r'/media/giangblackk/6DFEC767661D92C8/MyWorkspace/Graph/projects/MIS/Data/TransportationNetworks_test/Sydney/Sydney_net.net'))
+#G = nx.Graph(nx.read_pajek(r'/media/giangblackk/6DFEC767661D92C8/MyWorkspace/Graph/projects/MIS/Data/TransportationNetworks_test/Sydney/Sydney_net.net'))
 #G = nx.Graph(nx.read_pajek(r'/media/giangblackk/6DFEC767661D92C8/MyWorkspace/Graph/projects/MIS/Data/TransportationNetworks_test/Winnipeg/Winnipeg_net.net'))
-
+G = nx.Graph(nx.read_edgelist('/media/giangblackk/6DFEC767661D92C8/MyWorkspace/DATN/SocialNetwork/youtube/com-youtube.ungraph.txt'))
 IG = MIN(G)
 if(IG.number_of_edges() == 0):
     print('Independent set')
